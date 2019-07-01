@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo useradd ram
+echo "123" | sudo -S  passwd ram
+
+
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config-bkp
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
