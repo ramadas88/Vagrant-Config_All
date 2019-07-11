@@ -45,19 +45,21 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centos/6"
+  config.vm.box = "centos/7"
   #config.vm.synced_folder "src/", "/srv/website"
   config.vm.define "server1" do |server1|
-  server1.vm.network "private_network", ip: "192.168.10.100"
+  server1.vm.network "private_network", ip: "192.168.10.9"
   server1.vm.network "public_network", bridge: "Intel(R) Ethernet Connection (4) I219-LM"
-  server1.vm.hostname = "18-Ansible-WEB.ram.com"
+  server1.vm.hostname = "21-Ansible-Master.ram.com"
+  
   server1.vm.provider "virtualbox" do |vb|
 	vb.gui = false
-	vb.name = "18-Ansible-WEB.ram.com"
-	vb.memory = "512"
+	vb.name = "21-Ansible-Master.ram.com"
+	vb.memory = "1072"
 	end
   end
-
+  
+ 
 #  config.vm.define "server3" do |server3|
  # server3.vm.network "private_network", ip: "192.168.57.53"
 #  server3.vm.network "public_network", bridge: "Intel(R) Ethernet Connection (4) I219-LM"
